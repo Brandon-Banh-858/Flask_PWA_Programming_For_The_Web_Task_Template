@@ -24,5 +24,7 @@
 -- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
 -- VALUES (7,"Yfj","357","CPlusPlus");
 
-INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
-VALUES (8,"Symbolism","12","C++");
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (8,"Symbolism","12","C++");
+
+SELECT Username FROM UserTable;
