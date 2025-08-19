@@ -1,0 +1,28 @@
+-- database: ./data_source.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+-- SELECT * FROM "UserTable";
+-- CREATE TABLE UserTable(
+--     User_ID INTEGER NOT NULL PRIMARY KEY,
+--     Username TEXT NOT NULL, 
+--     Activity INTEGER NOT NULL,
+--     Programming_language TEXT NOT NULL);
+
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (1,"Bob123","7201","Python");
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (2,"JohnSmithWilliams","23","CPlusPlus");
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (3,"Qwertyuiop","12345","Python");
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (4,"Asdfghjkl","678","Python");
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (5,"Zxcvbnnm","900","CSharp");
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (6,"Usarname","91380","SQL");
+-- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+-- VALUES (7,"Yfj","357","CPlusPlus");
+
+INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
+VALUES (8,"Symbolism","12","C++");

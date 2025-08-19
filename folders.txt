@@ -1,3 +1,0 @@
-sql_folder
-python_folder
-https_css_folder
