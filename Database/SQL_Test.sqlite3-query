@@ -27,4 +27,4 @@
 -- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
 -- VALUES (8,"Symbolism","12","C++");
 
-SELECT Username FROM UserTable;
+SELECT Programming_language FROM UserTable;
