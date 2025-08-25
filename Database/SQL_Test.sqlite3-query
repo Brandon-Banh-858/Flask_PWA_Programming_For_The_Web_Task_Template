@@ -27,4 +27,29 @@
 -- INSERT INTO UserTable(User_ID,Username,Activity,Programming_language) 
 -- VALUES (8,"Symbolism","12","C++");
 
-SELECT Programming_language FROM UserTable;
+-- SELECT Programming_language FROM UserTable;
+
+
+-- CREATE TABLE UserTable(
+--     User_ID INTEGER NOT NULL PRIMARY KEY,
+--     Username TEXT NOT NULL, 
+--     Passcode TEXT NOT NULL,
+--     Phone_Number INTEGER,
+--     Programming_language TEXT);
+
+-- CREATE TABLE Messages(
+--     Message_ID INTEGER NOT NULL PRIMARY KEY,
+--     User_ID INTEGER NOT NULL,
+--     Message_Text TEXT NOT NULL,
+--     Time_Stamp CURRENT_TIMESTAMP);
+
+-- CREATE TABLE Answers(
+--     Answer_ID INTEGER NOT NULL PRIMARY KEY,
+--     Message_ID INTEGER NOT NULL,
+--     User_ID INTEGER NOT NULL,
+--     Answer_Text TEXT NOT NULL,
+--     Time_Stamp CURRENT_TIMESTAMP);
+
+
+INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+VALUES (1, "","How do I create a loop statement?",FROM_UNIXTIME(UNIX_TIMESTAMP('2023-8-8 00:30:00') + 1));
