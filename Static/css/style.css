@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #fdfdfd;
+  background: #DBF0DF;
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
 }
@@ -132,6 +132,32 @@ nav h1 {
   height: 100px;
 }
 
-#menu_text {
+#menu_text1 {
   color: rgb(208, 241, 206);
+  margin-top: 0px;
+  margin-left: -50px
 }
+
+#menu_text2 {
+  color: rgb(208, 241, 206);
+  margin-top: 0px;
+}
+
+#menu_text3 {
+  color: rgb(208, 241, 206);
+  margin-top: 0px;
+}
+
+
+#titled {
+  padding-top:8px;
+  padding-right:450px
+}
+
+#menu_fade {
+  background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 50px;
+  margin-top: 0px
+}
+
