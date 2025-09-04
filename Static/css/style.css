@@ -134,24 +134,35 @@ nav h1 {
 
 #menu_text1 {
   color: rgb(208, 241, 206);
-  margin-top: 0px;
-  margin-left: -50px
+  margin-top: 2px;
+  margin-left: -240px;
+  font-size: 13.5px;
 }
 
 #menu_text2 {
   color: rgb(208, 241, 206);
-  margin-top: 0px;
+  margin-top: 2px;
+  margin-left: 0px;
+  font-size: 13.5px;
 }
 
 #menu_text3 {
   color: rgb(208, 241, 206);
-  margin-top: 0px;
+  margin-top: 2px;
+  margin-left: 0px;
+  font-size: 13.5px;
 }
 
+#menu_text4 {
+  color: rgb(208, 241, 206);
+  margin-top: 2px;
+  margin-left: 0px;
+  font-size: 13.5px;
+}
 
 #titled {
   padding-top:8px;
-  padding-right:450px
+  padding-right:520px
 }
 
 #menu_fade {
@@ -161,3 +172,17 @@ nav h1 {
   margin-top: 0px
 }
 
+#homepage_text {
+  color: #254A22;
+  text-align: left;
+  font-weight: bolder;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+#ImageLogo {
+  height: 300px;
+  margin-left: 450px;
+  margin-bottom: 200px;
+}
