@@ -12,11 +12,11 @@ def index():
    data = dbHandler.listExtension()
    return render_template('/index.html', content=data)
 
-@app.route('/add.html', methods=['GET'])
+@app.route('/ask_and_answer.html', methods=['GET'])
 @app.route('/', methods=['POST', 'GET'])
-def add():
+def ask_and_answer():
    data = dbHandler.listExtension()
-   return render_template('/partials/add.html', content=data)
+   return render_template('/partials/ask_and_answer.html', content=data)
 
 @app.route('/homepage.html', methods=['GET'])
 @app.route('/', methods=['POST', 'GET'])
