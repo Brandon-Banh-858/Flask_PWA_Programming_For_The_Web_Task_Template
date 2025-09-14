@@ -482,6 +482,16 @@ nav h1 {
   margin-top: 350px;
 }
 
+#bottomnav1{
+  position: relative;
+  margin-top: 50px;
+}
+
+#bottomnav2{
+  position: relative;
+  margin-top: 50px;
+}
+
 #bottomtitled {
   margin-left: 30px;
   padding-top: 25px;
@@ -515,3 +525,140 @@ nav h1 {
   margin-left: 0px;
   font-size: 13px;
 }
+
+#login_menu {
+  text-align: center;
+  margin: auto;
+  margin-top: 60px;
+  width: 50%;
+  height: 200px;
+  background-color: black;
+  border: 20px solid black;
+  border-radius: 15px;
+}
+
+#program_block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 90%;
+  height: 200px;
+  background-color: #D6EECE;
+  border: 10px solid #B8DCB6;
+  border-radius: 10px
+}
+
+#program_background {
+  object-fit: cover;
+  width: 97%;
+  height: 105%;
+  margin-top: -4px;
+  border-radius: 7px;
+  filter: blur(1px);
+}
+
+#program_title {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 220px;
+  left: 0;
+}
+
+#program_title1 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 430px;
+  left: 0;
+}
+
+#program_title2 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 640px;
+  left: 0;
+}
+
+#program_title3 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 850px;
+  left: 0;
+}
+
+#program_title4 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 1060px;
+  left: 0;
+}
+
+#program_title5 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 1270px;
+  left: 0;
+}
+
+#program_title6 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 1480px;
+  left: 0;
+}
+
+#program_title7 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  color: #8CC986;
+  top: 1690px;
+  left: 0;
+}
+
