@@ -284,6 +284,26 @@ nav h1 {
   border-color: #8CC986;
 }
 
+#imageA {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 520px;
+  left: 25.25%;
+  height: 290px;
+}
+
+#imageB {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  left: 0px;
+  top: 520px;
+  left: 65.25%;
+  height: 290px;
+}
+
 #homepage_text2 {
   color: #254A22;
   text-align: left;
