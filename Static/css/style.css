@@ -557,7 +557,7 @@ nav h1 {
   border-radius: 15px;
 }
 
-#program_block {
+.program_block {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -572,23 +572,24 @@ nav h1 {
 #program_background {
   object-fit: cover;
   width: 97%;
-  height: 105%;
-  margin-top: -4px;
+  height: 95%;
+  margin-top: 5px;
   border-radius: 7px;
   filter: blur(1px);
 }
 
 #program_title {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 220px;
-  left: 0;
+  top: 183px;
+  left: 58px;
   visibility: visible;
 }
 
@@ -693,10 +694,5 @@ nav h1 {
 
 
 #CreateOverlay {
-  z-index: 3;
-  text-align: center;
-  width: 100%;
-  height: 135%;
-  margin-top: -110%;
-  visibility: hidden;
+  visibility: visible;
 }

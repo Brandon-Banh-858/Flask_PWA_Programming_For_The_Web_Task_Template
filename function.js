@@ -10,9 +10,9 @@ const CssButton = document.querySelector("div.div.button[id*='Css']")
 const Button = document.querySelector("div.div.button")
 
 function createOverlay(buttonClick) {
-    print("a")
+    alert("a")
     buttonClick.target.h1.id = "a"
 }
 PyButton.addEventListener("click", buttonClick)
 
-print("b")
+alert("b")
