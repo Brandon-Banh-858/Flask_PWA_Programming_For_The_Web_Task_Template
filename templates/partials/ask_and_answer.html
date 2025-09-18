@@ -2,10 +2,17 @@
 
 {% block content %}
 <head>
-    <link rel="stylesheet" href="../Temples/static/css/style.css"/>
-    <script async src="../Temples/static/css/function.js"></script>
+
 </head>
 <body>
+    <div id="shadow"></div>
+    <div id="overlayed">
+        <h2 id="OverlayTitle">Would you like to ask questions or submit answers?</h2>
+        <a class="Qbutton" id="PythonQs" href="messages.html">Questions</a>
+        <a class="Abutton" id="PythonAs" href="question">Answers</a>
+        <p id="OverlaySmall">Python</p>
+        <button id="exited"><img id="exit" src="static\images\Exit.jpg" alt="Exit"></button>
+    </div>
     <div>
         <div class="program_block" class="container">
             <img id="program_background" src="static\images\code_background_1.jpg" alt="VSCode Extensions site logo." />

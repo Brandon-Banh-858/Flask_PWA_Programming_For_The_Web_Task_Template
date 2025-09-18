@@ -551,7 +551,7 @@ nav h1 {
   margin: auto;
   margin-top: 60px;
   width: 50%;
-  height: 200px;
+  height: 250px;
   background-color: black;
   border: 20px solid black;
   border-radius: 15px;
@@ -574,13 +574,14 @@ nav h1 {
   width: 97%;
   height: 95%;
   margin-top: 5px;
+  margin-left: 7px;
   border-radius: 7px;
   filter: blur(1px);
 }
 
 #program_title {
   z-index: 1;
-  width: 85%;
+  width: 57%;
   height: 22%;
   position: absolute;
   display: flex;
@@ -589,110 +590,457 @@ nav h1 {
   font-size: 80px;
   color: #8CC986;
   top: 183px;
-  left: 58px;
+  left: 21.5%;
   visibility: visible;
 }
 
 #program_title1 {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 57%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 430px;
-  left: 0;
+  top: 393px;
+  left: 21.5%;
   visibility: visible;
 }
 
 #program_title2 {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 57%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 640px;
-  left: 0;
+  top: 603px;
+  left: 21.5%;
   visibility: visible;
 }
 
 #program_title3 {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 57%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 850px;
-  left: 0;
+  top: 813px;
+  left: 21.5%;
   visibility: visible;
 }
 
 #program_title4 {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 57%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 1060px;
-  left: 0;
+  top: 1023px;
+  left: 21.5%;
   visibility: visible;
 }
 
 #program_title5 {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 57%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 1270px;
-  left: 0;
+  top: 1233px;
+  left: 21.5%;
   visibility: visible;
 }
 
 #program_title6 {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 57%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 1480px;
-  left: 0;
+  top: 1443px;
+  left: 21.5%;
   visibility: visible;
 }
 
 #program_title7 {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 57%;
+  height: 22%;
   position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   color: #8CC986;
-  top: 1690px;
-  left: 0;
+  top: 1653px;
+  left: 21.5%;
   visibility: visible;
 }
 
-
-
-#CreateOverlay {
+#program_title:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 183px;
+  left: 21.5%;
   visibility: visible;
+}
+
+#program_title1:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 393px;
+  left: 21.5%;
+  visibility: visible;
+}
+
+#program_title2:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 603px;
+  left: 21.5%;
+  visibility: visible;
+}
+
+#program_title3:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 813px;
+  left: 21.5%;
+  visibility: visible;
+}
+
+#program_title4:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 1023px;
+  left: 21.5%;
+  visibility: visible;
+}
+
+#program_title5:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 1233px;
+  left: 21.5%;
+  visibility: visible;
+}
+
+#program_title6:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 1443px;
+  left: 21.5%;
+  visibility: visible;
+}
+
+#program_title7:hover {
+  z-index: 1;
+  width: 57%;
+  height: 22%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 77px;
+  color: #78b272;
+  top: 1653px;
+  left: 21.5%;
+  visibility: visible;
+}
+
+.CreateOverlay {
+  z-index: 0;
+  visibility: hidden;
+  /* width: 50%;
+  height:50%; */
+  cursor: pointer;
+}
+
+#shadow {
+  z-index: 5;
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background-color: rgb(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+#shadow2 {
+  z-index: 5;
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background-color: rgb(0, 0, 0, 0.5);
+  visibility: visible;
+}
+
+#overlayed {
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+  top: 35%;
+  left: 30%;
+  right: 30%;
+  background-color: #D6EECE;
+  border: 10px solid #B8DCB6;
+  border-radius: 15px;
+  height: 200px;
+  visibility: hidden;
+}
+
+#overlayed2 {
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+  top: 35%;
+  left: 30%;
+  right: 30%;
+  background-color: #D6EECE;
+  border: 10px solid #B8DCB6;
+  border-radius: 15px;
+  height: 200px;
+  visibility: visible;
+}
+
+#OverlayTitle {
+  text-align: center;
+  color: #7A9F77;
+  font-size: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.Qbutton {
+  position: relative;
+  font-size: 30px;
+  width: 100px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #8CC986;
+  border: 5px solid #8CC986;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 25px;
+  margin-right: 60px;
+}
+
+.Abutton {
+  position: relative;
+  font-size: 30px;
+  padding: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #8CC986;
+  border: 5px solid #8CC986;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 25px;
+  margin-left: 60px;
+}
+
+.Qbutton:hover {
+  position: relative;
+  font-size: 28px;
+  width: 100px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #8CC986;
+  border: 5px solid #8CC986;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 25px;
+  margin-right: 68px;
+}
+
+.Abutton:hover {
+  position: relative;
+  font-size: 28px;
+  padding: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #8CC986;
+  border: 5px solid #8CC986;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 25px;
+  margin-left: 68px;
+}
+
+#OverlaySmall {
+  position: absolute;
+  text-align: center;
+  color: #7A9F77;
+  bottom: 5px;
+  width: 100%;
+}
+
+#exited {
+  visibility: hidden;
+  cursor:pointer;
+}
+
+#exit {
+  position: absolute;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+}
+
+#exit2 {
+  position: absolute;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+  visibility: visible;
+}
+
+#nameheading {
+  margin-top: -5px;
+  margin-bottom: 0px;
+  color: #9BD995;
+}
+
+#username {
+  display: inline;
+  position: relative;
+  text-align: center;
+  left: 0px;
+  top: 10px;
+  margin-right: 0%;
+  width: 70%;
+  background-color: #D6EECE;
+  border-color: #bfe0bd;
+  border-radius: 5px;
+}
+
+#nameheading2 {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: #9BD995;
+}
+
+#password {
+  display: inline;
+  position: relative;
+  text-align: center;
+  left: 0px;
+  top: 10px;
+  margin-right: 0%;
+  width: 50%;
+  background-color: #D6EECE;
+  border-color: #bfe0bd;
+  border-radius: 5px;
+}
+
+#LoginIn {
+  position: relative;
+  display: block;
+  text-align: center;
+  left: 40%;
+  top: 35px;
+  background-color:#D0F1CE;
+  width: 20%;
+  height: 30px;
+  cursor: pointer;
+  border: 5px solid #bfe0bd;
+  border-radius: 5px;
+}
+
+#LoginIn:hover {
+  position: relative;
+  display: block;
+  text-align: center;
+  left: 40%;
+  top: 35px;
+  background-color:#bfe0bd;
+  width: 20%;
+  height: 30px;
+  cursor: pointer;
+  border: 5px solid #bfe0bd;
+  border-radius: 5px;
+}
+
+#Login_In {
+  font-size: 20px;
 }
