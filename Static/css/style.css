@@ -551,7 +551,7 @@ nav h1 {
   margin: auto;
   margin-top: 60px;
   width: 50%;
-  height: 250px;
+  height: 230px;
   background-color: black;
   border: 20px solid black;
   border-radius: 15px;
@@ -981,7 +981,7 @@ nav h1 {
   color: #9BD995;
 }
 
-#username {
+#username_ {
   display: inline;
   position: relative;
   text-align: center;
@@ -1017,7 +1017,7 @@ nav h1 {
   position: relative;
   display: block;
   text-align: center;
-  left: 40%;
+  left: 20%;
   top: 35px;
   background-color:#D0F1CE;
   width: 20%;
@@ -1031,7 +1031,7 @@ nav h1 {
   position: relative;
   display: block;
   text-align: center;
-  left: 40%;
+  left: 20%;
   top: 35px;
   background-color:#bfe0bd;
   width: 20%;
@@ -1039,8 +1039,37 @@ nav h1 {
   cursor: pointer;
   border: 5px solid #bfe0bd;
   border-radius: 5px;
+  right: 50px;
 }
 
 #Login_In {
   font-size: 20px;
+}
+
+#LoginIn2 {
+  position: relative;
+  display: block;
+  text-align: center;
+  left: 60%;
+  top: 5px;
+  background-color:#D0F1CE;
+  width: 20%;
+  height: 30px;
+  cursor: pointer;
+  border: 5px solid #bfe0bd;
+  border-radius: 5px;
+}
+
+#LoginIn2:hover {
+  position: relative;
+  display: block;
+  text-align: center;
+  left: 60%;
+  top: 5px;
+  background-color:#bfe0bd;
+  width: 20%;
+  height: 30px;
+  cursor: pointer;
+  border: 5px solid #bfe0bd;
+  border-radius: 5px;
 }

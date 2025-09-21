@@ -5,7 +5,6 @@ window.onload = function() {
     Overlay = document.getElementById("overlayed");
     Exit = document.getElementById("exited");
 
-
     PyButton = document.getElementById("Python");
     JavaButton = document.getElementById("Java");
     JScriptButton = document.getElementById("Javascript");
@@ -23,6 +22,9 @@ window.onload = function() {
     SqlButton.addEventListener("click", createOverlay);
     HtmlButton.addEventListener("click", createOverlay);
     CssButton.addEventListener("click", createOverlay);
+
+    InputUsername = document.getElementById("username_");
+    InputPassword = document.getElementById("password");
 }
 
 
