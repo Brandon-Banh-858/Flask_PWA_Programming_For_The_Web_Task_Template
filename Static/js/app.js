@@ -25,6 +25,10 @@ window.onload = function() {
 
     InputUsername = document.getElementById("username_");
     InputPassword = document.getElementById("password");
+
+    SendToSign = document.getElementById("LoginIn2");
+    SendToSign.addEventListener("click", SendSign);
+    alert(SendToSign);
 }
 
 
@@ -56,6 +60,10 @@ function leaveOverlay() {
     Exit.children[0].id = "exit";
 }
 
+function SendSign() {
+    alert("a");
+    document.location.href = "/Flask_PWA_Programming_For_The_Web_Task_Template/templates/partials/signin.html";
+}
 
 // alert("Help!");
 

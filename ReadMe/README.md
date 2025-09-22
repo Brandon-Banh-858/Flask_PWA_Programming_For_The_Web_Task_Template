@@ -68,12 +68,13 @@ Began setting up the website and attempted (but failed) to link the SQL database
 
 ## Week 7
 Notes:
-Website is up and running! Makiing homepage + designing it. Relearning how to use HTML and CSS.
+Website is up and running! Making homepage + designing it. Relearning how to use HTML and CSS.
 
 ## Week 8
-
+ContinUED wITH Java
 
 ## Week 9
-
+Added more java interactivity + making login screen
 
 ## Week 10
+Login Screen
