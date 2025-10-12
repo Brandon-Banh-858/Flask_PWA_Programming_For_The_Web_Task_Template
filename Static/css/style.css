@@ -443,7 +443,7 @@ nav h1 {
   left: 56em;
 }
 
-#username {
+#username3 {
   display: block;
   position: absolute;
   z-index: 1;
@@ -549,7 +549,7 @@ nav h1 {
 #login_menu {
   text-align: center;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 20px;
   width: 50%;
   height: 230px;
   background-color: black;
@@ -981,7 +981,7 @@ nav h1 {
   color: #9BD995;
 }
 
-#username_ {
+#username {
   display: inline;
   position: relative;
   text-align: center;
@@ -1020,7 +1020,7 @@ nav h1 {
   left: 20%;
   top: 35px;
   background-color:#D0F1CE;
-  width: 20%;
+  width: 25%;
   height: 30px;
   cursor: pointer;
   border: 5px solid #bfe0bd;
@@ -1034,7 +1034,7 @@ nav h1 {
   left: 20%;
   top: 35px;
   background-color:#bfe0bd;
-  width: 20%;
+  width: 25%;
   height: 30px;
   cursor: pointer;
   border: 5px solid #bfe0bd;
@@ -1050,10 +1050,10 @@ nav h1 {
   position: relative;
   display: block;
   text-align: center;
-  left: 60%;
+  left: 55%;
   top: 5px;
   background-color:#D0F1CE;
-  width: 20%;
+  width: 25%;
   height: 30px;
   cursor: pointer;
   border: 5px solid #bfe0bd;
@@ -1064,12 +1064,62 @@ nav h1 {
   position: relative;
   display: block;
   text-align: center;
-  left: 60%;
+  left: 55%;
   top: 5px;
   background-color:#bfe0bd;
-  width: 20%;
+  width: 25%;
   height: 30px;
   cursor: pointer;
   border: 5px solid #bfe0bd;
   border-radius: 5px;
+}
+
+#ErrorMes {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 5px;
+  background-color: red;
+  border: 10px solid red;
+  text-align: center;
+  width: 60%;
+  border-radius: 5px;
+  margin-left: 20%;
+  margin-top: 20px;
+}
+
+#ErrorMesNo {
+  color: white;
+  font-size: 10px;
+  margin-bottom: 5px;
+  background-color: red;
+  border: 10px solid red;
+  text-align: center;
+  width: 60%;
+  border-radius: 5px;
+  margin-left: 20%;
+  margin-top: 20px;
+}
+
+#PassData {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  font-size: 0px;
+  top: -500%;
+  right: -500%;
+  position: fixed;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  font-size: 0px;
+  top: -500%;
+  right: -500%;
+  position: fixed;
 }

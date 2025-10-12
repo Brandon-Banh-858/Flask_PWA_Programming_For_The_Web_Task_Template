@@ -51,23 +51,25 @@
 --     Time_Stamp CURRENT_TIMESTAMP);
 
 
-INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
-VALUES (1, 500,"How do I create a loop statement?",575728);
+-- INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+-- VALUES (1, 500,"How do I create a loop statement?",575728);
 
-INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
-VALUES (2, 233,"Any tips on shortening code / optimising it?",2546234);
+-- INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+-- VALUES (2, 233,"Any tips on shortening code / optimising it?",2546234);
 
-INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
-VALUES (3, 368,"How do I make a multiplayer game?",223);
+-- INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+-- VALUES (3, 368,"How do I make a multiplayer game?",223);
 
-INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
-VALUES (4, 987,"How do I generate random numbers?",1234567);
+-- INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+-- VALUES (4, 987,"How do I generate random numbers?",1234567);
 
-INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
-VALUES (5, 136,"What arae variables??:",52893);
+-- INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+-- VALUES (5, 136,"What arae variables??:",52893);
 
-INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
-VALUES (6, 871,"Is Visual Studio Code a good option to code on?",100000);
+-- INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+-- VALUES (6, 871,"Is Visual Studio Code a good option to code on?",100000);
 
-INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
-VALUES (7, 178,"How do I code the same project on multiple computers ",1869390);
+-- INSERT INTO Messages(Message_ID,User_ID,Message_Text,Time_Stamp) 
+-- VALUES (7, 178,"How do I code the same project on multiple computers ",1869390);
+
+SELECT * FROM UserTable WHERE Username = 'apple'

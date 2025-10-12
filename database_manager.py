@@ -7,7 +7,3 @@ def listExtension():
     con.close()
     return data
 
-def signUp():
-    con = sql.connect("Flask_PWA_Programming_For_The_Web_Task_Template/Database/data_source.db")
-    cur = con.cursor()
-    con.execute("INSERT INTO UserTable (username, passcode) VALUES")
