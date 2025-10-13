@@ -5,9 +5,65 @@
 
 </head>
 <body>
+    <div id="LoginShadow"></div>
+    <div id="LoginOverlay">
+        <form action="{{'messages.html'}}" method='POST' id="ChangePasswordForm">
+            <input type="hidden" name="typing" value="LoginChange">
+            <h2 id="LoginName">{{UserNamed}}</h2>
+            <h2 id="LoginPass">Change Password</h2>
+            <input type="text" id="oldpassword" name="oldpassword" required minlength="8" maxlength="20" size="10" placeholder="Type Old Password Here">
+            <input type="text" id="newpassword" name="newpassword" required minlength="8" maxlength="20" size="10" placeholder="Type New Password Here">
+            <button id="LoginButton">Confirm</button>
+            <p id="Success">{{Success}}</p>
+        </form>
+        <button id="exitedLogin"><img id="exitLogin" src="static\images\Exit.jpg" alt="Exit"></button>
+
+        <form action="{{'messages.html'}}" method='POST' id="ChangePasswordForm">
+            <input type="hidden" name="typing" value="LoggingOut">
+            <button id="LogoutButton">Log Out</button>
+        </form>
+    </div>
+
     <div>
+        <div class="ScrollBar">
+            <div id="GoBack"></div>
+            <button id="GoBackLeave"><img id="GoBackImg" src="static\images\GreenArrow.png" alt="Go Back"></button>
+            <h1 id="GoBackText">Go Back</h1>
+            <div id="SubmitOr"></div>
+            <button id="SubmitOrLeave"><img id="SubmitOrImg" src="static\images\GreenArrow.png" alt="Submit Or See Answers"></button>
+            <h1 id="SubmitOrText">Submit Or See Answers</h1>
+
+            {% for message in mymessages %}
+            <div class="CustomText">
+                <p class="CustomMessage">{{message[2]}}</p>
+                <button class="Deletion" id="{{message[0]}}"><img class="DeletionImg" src="static\images\ExitTransparent.png" alt="Exit" id="{{message[0]}}"></button>
+                <p class="AnswerText">Answer</p>
+                <div class="CustomAnswer">
+                    {% if (myanswers[mymessages.index(message)]) == [] %}
+                    <p class="AnswerComments">There are no answers to this question.</p>
+                    {% endif %}
+                    {% for answer in myanswers[mymessages.index(message)] %}
+                    <p class="AnswerComments"><span class=AnswerUser>[{{users_data[answer[2]][1]}}]</span>{{answer[3]}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div id="MessageSend">
+            <form action="{{'messages.html'}}" method='POST' id="SendMessage">
+                <input type="hidden" name="typing" value="SendingMessage">
+                <input type="text" id="inputmessage" name="inputmessage" required minlength="3" maxlength="255" size="10" placeholder="Type your message here!">
+            </form>
+        </div>
+        
+        <form action="{{'messages.html'}}" method='POST' id="DeleteSystem">
+            <input type="hidden" name="typing" value="TheDeleteMessage">
+            <input type="hidden" name="whatToDelete" value="" id="whatToDelete">
+        </form>
 
     </div>
+
     <div id="menu">
         <nav id="bottomnav2">
             <h1 id="bottomtitled">Messages</h1>

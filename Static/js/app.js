@@ -26,8 +26,21 @@ window.onload = function() {
 
         UserName = document.getElementById("TrueUsernamed");
         if (UserName.textContent != "") {
-            this.document.getElementById("menu_text4").textContent = UserName.children[0].textContent + "'s Profile";
-            this.document.getElementById("bottom_menu_text4").textContent = UserName.children[0].textContent + "'s Profile";
+
+            document.getElementById("PythonQs").addEventListener("click", detect);
+            document.getElementById("PythonAs").addEventListener("click", detect);
+
+            this.document.getElementById("menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("bottom_menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("menu_text4").children.item(0).setAttribute('href', '');
+            this.document.getElementById("bottom_menu_text4").children.item(0).setAttribute('href', '');
+
+            this.document.getElementById("menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+            this.document.getElementById("bottom_menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+
+            if (document.getElementById("Success").textContent != "") {
+                LoginOverlay2();
+            }
         }
     }
 
@@ -54,22 +67,71 @@ window.onload = function() {
 
         UserName = document.getElementById("TrueUsernamed");
         if (UserName.textContent != "") {
-            this.alert(this.document.getElementById("menu_text4").textContent = UserName.children)
-            this.document.getElementById("menu_text4").textContent = UserName.children[0] + "'s Profile";
-            this.document.getElementById("bottom_menu_text4").textContent = UserName.children[0].textContent + "'s Profile";
-        }
+            this.document.getElementById("menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("bottom_menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("menu_text4").children.item(0).setAttribute('href', '')
+            this.document.getElementById("bottom_menu_text4").children.item(0).setAttribute('href', '')
+
+            this.document.getElementById("menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+            this.document.getElementById("bottom_menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+
+            if (document.getElementById("Success").textContent != "") {
+                LoginOverlay2();
+            }
+        }   
     }
 
     if (document.getElementById("homepage_text")) {
         UserName = document.getElementById("TrueUsernamed");
         if (UserName.textContent != "") {
-            this.document.getElementById("menu_text4").textContent = UserName.children[0].textContent + "'s Profile";
-            this.document.getElementById("bottom_menu_text4").textContent = UserName.children[0].textContent + "'s Profile";
+            this.document.getElementById("menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("bottom_menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("menu_text4").children.item(0).setAttribute('href', '');
+            this.document.getElementById("bottom_menu_text4").children.item(0).setAttribute('href', '');
+
+            this.document.getElementById("menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+            this.document.getElementById("bottom_menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+
+            if (document.getElementById("Success").textContent != "") {
+                LoginOverlay2();
+            }
+        }
+    }
+
+    if (document.getElementById("MessageSend")) {
+
+        this.document.getElementById("GoBackLeave").addEventListener("click", Leave);
+        this.document.getElementById("SubmitOrLeave").addEventListener("click", Leave2);
+
+        // this.document.querySelectorAll('.Deletion')
+        deletionlist = this.document.querySelectorAll('.Deletion');
+        for (let num = 0; num < deletionlist.length; num++) {
+            deletionlist[num].addEventListener("click", destroy);
+        }
+
+        UserName = document.getElementById("TrueUsernamed");
+        if (UserName.textContent != "") {
+            this.document.getElementById("menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("bottom_menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
+            this.document.getElementById("menu_text4").children.item(0).setAttribute('href', '');
+            this.document.getElementById("bottom_menu_text4").children.item(0).setAttribute('href', '');
+
+            this.document.getElementById("menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+            this.document.getElementById("bottom_menu_text4").children.item(0).addEventListener("click", LoginOverlay);
+
+            if (document.getElementById("Success").textContent != "") {
+                LoginOverlay2();
+            }
+        }
+        else {
+            if (this.document.location.href == "http://192.168.1.122:5000/messages.html") {
+                document.location.href = "ask_and_answer.html";
+            }
         }
     }
 }
 
-function createOverlay() {
+function createOverlay(ev) {
     Shadow.id = "shadow2";
     Overlay.id = "overlayed2";
     Overlay.children[3].innerHTML = this.id;
@@ -107,5 +169,51 @@ function SendSign2() {
     document.forms["SignInForm"].submit();
     // document.location.href = "homepage.html";
 }
+
+function LoginOverlay(ev) {
+    document.getElementById("LoginOverlay").style.visibility = "visible";
+    document.getElementById("LoginShadow").style.visibility = "visible";
+    document.getElementById("exitLogin").style.visibility = "visible";
+    document.getElementById("exitLogin").addEventListener("click", LoginOverlay0);
+    ev.preventDefault();
+}
+
+function LoginOverlay2() {
+    document.getElementById("LoginOverlay").style.visibility = "visible";
+    document.getElementById("LoginShadow").style.visibility = "visible";
+    document.getElementById("exitLogin").style.visibility = "visible";
+    document.getElementById("exitLogin").addEventListener("click", LoginOverlay0);
+}
+
+function LoginOverlay0() {
+    document.getElementById("LoginOverlay").style.visibility = "hidden";
+    document.getElementById("LoginShadow").style.visibility = "hidden";
+    document.getElementById("exitLogin").style.visibility = "hidden";
+    document.getElementById("Success").textContent = "";
+}
+
+
+function Leave() {
+    document.location.href = "ask_and_answer.html";
+}
+
+function Leave2() {
+    document.location.href = "question.html";
+}
+
+function destroy(ev) {
+    document.getElementById("whatToDelete").value = ev.target.id;
+    document.forms["DeleteSystem"].submit();
+}
+
+function detect(ev) {
+    document.getElementById("ChangeLang").value = Overlay.children[3].textContent;
+    document.forms["ChangingProgram"].submit();
+}
+
+function detect2(ev) {
+    
+}
+
 // alert("Help!");
 

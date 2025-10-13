@@ -5,11 +5,30 @@
 
 </head>
 <body>
+     <div id="LoginShadow"></div>
+    <div id="LoginOverlay">
+        <form action="{{'ask_and_answer.html'}}" method='POST' id="ChangePasswordForm">
+            <input type="hidden" name="typing" value="LoginChange">
+            <h2 id="LoginName">{{UserNamed}}</h2>
+            <h2 id="LoginPass">Change Password</h2>
+            <input type="text" id="oldpassword" name="oldpassword" required minlength="8" maxlength="20" size="10" placeholder="Type Old Password Here">
+            <input type="text" id="newpassword" name="newpassword" required minlength="8" maxlength="20" size="10" placeholder="Type New Password Here">
+            <button id="LoginButton">Confirm</button>
+            <p id="Success">{{Success}}</p>
+        </form>
+        <button id="exitedLogin"><img id="exitLogin" src="static\images\Exit.jpg" alt="Exit"></button>
+
+        <form action="{{'ask_and_answer.html'}}" method='POST' id="ChangePasswordForm">
+            <input type="hidden" name="typing" value="LoggingOut">
+            <button id="LogoutButton">Log Out</button>
+        </form>
+    </div>
+
     <div id="shadow"></div>
     <div id="overlayed">
         <h2 id="OverlayTitle">Would you like to ask questions or submit answers?</h2>
         <a class="Qbutton" id="PythonQs" href="messages.html">Questions</a>
-        <a class="Abutton" id="PythonAs" href="question">Answers</a>
+        <a class="Abutton" id="PythonAs" href="signin.html">Answers</a>
         <p id="OverlaySmall">Python</p>
         <button id="exited"><img id="exit" src="static\images\Exit.jpg" alt="Exit"></button>
     </div>
@@ -47,6 +66,11 @@
             <button class="CreateOverlay" id="Css"><h1 id="program_title7" class="centered">Css (.css)</h1></button>
         </div>
         
+        <form action="{{'ask_and_answer.html'}}" method='POST' id="ChangingProgram">
+            <input type="hidden" name="typing" value="ChangeProgramLang">
+            <input type="hidden" name="ChangeLang" value="" id="ChangeLang">
+        </form>
+
     </div>
     <div id="menu">
         <nav id="bottomnav1">

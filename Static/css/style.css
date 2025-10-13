@@ -1123,3 +1123,311 @@ nav h1 {
   right: -500%;
   position: fixed;
 }
+
+#LoginOverlay {
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+  top: 25%;
+  left: 30%;
+  right: 30%;
+  background-color: #D6EECE;
+  border: 10px solid #B8DCB6;
+  border-radius: 15px;
+  height: 50%;
+  visibility: hidden;
+}
+
+#LoginShadow {
+  z-index: 5;
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background-color: rgb(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+#LoginName {
+  margin-top: 20px;
+}
+
+#LoginPass {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#oldpassword {
+  display: inline;
+  position: relative;
+  text-align: center;
+  left: 0px;
+  top: 5px;
+  margin-right: 0%;
+  width: 80%;
+  background-color: #d6eecec1;
+  border-color: #bfe0bd;
+  border-radius: 5px;
+}
+
+#newpassword {
+  display: inline;
+  position: relative;
+  text-align: center;
+  left: 0px;
+  top: 10px;
+  margin-right: 0%;
+  width: 80%;
+  background-color: #d6eecec1;
+  border-color: #bfe0bd;
+  border-radius: 5px;
+}
+
+#LoginButton {
+  position: relative;
+  display: block;
+  left: 35%;
+  font-size: 17px;
+  width: 30%;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #8CC986;
+  border: 5px solid #8CC986;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 15px;
+}
+
+
+#LoginButton:hover {
+  position: relative;
+  display: block;
+  left: 36%;
+  font-size: 17px;
+  width: 28%;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #7bb376;
+  border: 5px solid #7bb376;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 15px;
+}
+
+#Success {
+  position: relative;
+  display: block;
+  margin-top: 22px;
+  font-size: 15px;
+  color: red;
+}
+
+#exitedLogin {
+  visibility: hidden;
+  cursor:pointer;
+}
+
+#exitLogin {
+  position: fixed;
+  height: 30px;
+  top: 27%;
+  right: 31%;
+}
+
+#LogoutButton {
+  position: relative;
+  display: block;
+  left: 35%;
+  font-size: 17px;
+  width: 30%;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #8CC986;
+  border: 5px solid #8CC986;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 80px;
+}
+
+
+#LogoutButton:hover {
+  position: relative;
+  display: block;
+  left: 36%;
+  font-size: 17px;
+  width: 28%;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #7bb376;
+  border: 5px solid #7bb376;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 80px;
+}
+
+#GoBack {
+  position: absolute;
+  z-index: -1;
+  height: 900px;
+  width: 5%;
+  margin-top: -50px;
+  left: 275x;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+#GoBackLeave {
+  visibility: hidden;
+  cursor:pointer;
+}
+
+#GoBackImg {
+  position: absolute;
+  left: 290px;
+  height: 50px;
+  top: 170px;
+  visibility: visible;
+}
+#GoBackText {
+  position: absolute;
+  transform: rotate(270deg);
+  left: 250px;
+  top: 280px;
+}
+
+#SubmitOr {
+  position: absolute;
+  z-index: -1;
+  height: 900px;
+  width: 5%;
+  margin-top: -70px;
+  right: 266.5px;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+#SubmitOrLeave {
+  visibility: hidden;
+  cursor:pointer;
+}
+
+#SubmitOrImg {
+  position: absolute;
+  right: 290px;
+  height: 50px;
+  top: 170px;
+  transform: rotate(180deg);
+  visibility: visible;
+}
+
+#SubmitOrText {
+  position: absolute;
+  transform: rotate(90deg);
+  right: 130px;
+  top: 400px;
+}
+
+.CustomText {
+  background-color: #505050;
+  border: #505050 10px solid;
+  border-radius: 10px;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 20px;
+}
+
+.CustomMessage {
+  position: relative;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  left: 10%;
+  max-width: 80%;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.Deletion {
+  visibility: hidden;
+  cursor:pointer;
+  position: relative;
+  float: left;
+  vertical-align: top;
+}
+.DeletionImg {
+  visibility: visible;
+  position: relative;
+  height: 30px;
+  bottom: 30px;
+}
+
+.AnswerText {
+  position: relative;
+  color: #9BD995;
+  font-size: 18px;
+  text-decoration: wavy;
+  text-align: center;
+  margin-top: 20px;
+  right: 2.5%;
+}
+
+.CustomAnswer {
+  margin-top: 8px;
+  background-color: #323232;
+  border: #323232 10px solid;
+  border-radius: 10px;
+  width: 97%;
+  margin-left: 1.5%;
+}
+
+.AnswerComments {
+  color: white;
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.AnswerUser {
+  color: white;
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+#MessageSend {
+  position: relative;
+  text-align: center;
+  left: 10%;
+  width: 80%;
+  height: 50px;
+  top: 40px;
+  margin-top: 0px;
+  background-color: #505050;
+  border: #505050 10px solid;
+  border-radius: 7px;
+}
+
+#inputmessage {
+  position: relative;
+  text-align: left;
+  width: 99%;
+  font-size: 22px;
+  background-color: #505050;
+  border: #505050 1px solid;
+  color: white;
+}
+
+.ScrollBar {
+  height: 720px; /* or any value */
+    overflow-y: auto;
+}
