@@ -220,7 +220,8 @@ nav h1 {
   background-color: #8CC986;
   border-radius: 5px;
   border-width: 10px;
-  border-color: #8CC986
+  border-color: #8CC986;
+  visibility: visible;
 }
 
 #homepage_subtitle {
@@ -1280,7 +1281,7 @@ nav h1 {
   height: 900px;
   width: 5%;
   margin-top: -50px;
-  left: 275x;
+  left: 266.5px;
   background-color: rgb(0, 0, 0, 0.3);
 }
 
@@ -1299,8 +1300,8 @@ nav h1 {
 #GoBackText {
   position: absolute;
   transform: rotate(270deg);
-  left: 250px;
-  top: 280px;
+  left: 185px;
+  top: 335px;
 }
 
 #SubmitOr {
@@ -1430,4 +1431,94 @@ nav h1 {
 .ScrollBar {
   height: 720px; /* or any value */
     overflow-y: auto;
+}
+
+.GoBack {
+  position: absolute;
+  z-index: -1;
+  height: 900px;
+  width: 5%;
+  margin-top: -50px;
+  left: 266.5px;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.SubmitOr {
+  position: absolute;
+  z-index: -1;
+  height: 900px;
+  width: 5%;
+  margin-top: -70px;
+  right: 266.5px;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+#GoBackText2 {
+  position: absolute;
+  transform: rotate(270deg);
+  left: 200px;
+  top: 325px;
+}
+
+#SubmitOrText2 {
+  position: absolute;
+  transform: rotate(90deg);
+  right: 185px;
+  top: 340px;
+}
+
+#MessageSend2 {
+  position: relative;
+  text-align: center;
+  left: 10%;
+  width: 80%;
+  height: 50px;
+  top: 335px;
+  margin-top: 0px;
+  background-color: #505050;
+  border: #505050 10px solid;
+  border-radius: 7px;
+}
+
+#ErrorOverlay {
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+  top: 32.5%;
+  left: 30%;
+  right: 30%;
+  background-color: #D6EECE;
+  border: 10px solid #B8DCB6;
+  border-radius: 15px;
+  height: 35%;
+  visibility: hidden;
+}
+
+#ErrorOops {
+  margin-top: 20px;
+  font-size: 40px;
+  color: red;
+}
+
+#ErrorOops2 {
+  margin-top: 10px;
+  font-size: 30px;
+  color: black;
+}
+
+#LeaveButton {
+  position: relative;
+  display: block;
+  left: 35%;
+  font-size: 17px;
+  width: 30%;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #8CC986;
+  border: 5px solid #8CC986;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  top: 15px;
 }

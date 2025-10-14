@@ -11,8 +11,8 @@
             <input type="hidden" name="typing" value="LoginChange">
             <h2 id="LoginName">{{UserNamed}}</h2>
             <h2 id="LoginPass">Change Password</h2>
-            <input type="text" id="oldpassword" name="oldpassword" required minlength="8" maxlength="20" size="10" placeholder="Type Old Password Here">
-            <input type="text" id="newpassword" name="newpassword" required minlength="8" maxlength="20" size="10" placeholder="Type New Password Here">
+            <input type="text" id="oldpassword" name="oldpassword" required minlength="3" maxlength="20" size="10" placeholder="Type Old Password Here">
+            <input type="text" id="newpassword" name="newpassword" required minlength="3" maxlength="20" size="10" placeholder="Type New Password Here">
             <button id="LoginButton">Confirm</button>
             <p id="Success">{{Success}}</p>
         </form>
@@ -25,11 +25,17 @@
     </div>
 
     <div>
+        <div id="ErrorOverlay">
+            <h2 id="ErrorOops">Sorry, You Can't Be Here!</h2>
+            <h2 id="ErrorOops2"></h2>
+            <a id="LeaveButton" href="homepage.html">Leave</a>
+        </div>
+
         <div class="ScrollBar">
-            <div id="GoBack"></div>
+            <div id="GoBack", class="GoBack"></div>
             <button id="GoBackLeave"><img id="GoBackImg" src="static\images\GreenArrow.png" alt="Go Back"></button>
-            <h1 id="GoBackText">Go Back</h1>
-            <div id="SubmitOr"></div>
+            <h1 id="GoBackText">Ask and Answer</h1>
+            <div id="SubmitOr", class="SubmitOr"></div>
             <button id="SubmitOrLeave"><img id="SubmitOrImg" src="static\images\GreenArrow.png" alt="Submit Or See Answers"></button>
             <h1 id="SubmitOrText">Submit Or See Answers</h1>
 

@@ -23,6 +23,7 @@ def index():
    if request.method == "POST":
       if request.form["typing"].strip() == "LoggingOut":
          TrueUsername = ""
+         ProgramLang = ""
 
       elif request.form["typing"].strip() == "LoginChange":
          Old_Pas = request.form["oldpassword"].strip()
@@ -57,17 +58,19 @@ def index():
 def ask_and_answer():
    global TrueUsername,ProgramLang
    if request.method == "POST":
-
       if request.form["typing"].strip() == "ChangeProgramLang":
-         conn = connection()
-         cursor = conn.cursor()
-         ProgramLang = request.form["ChangeLang"].strip()
-         cursor.execute("UPDATE UserTable SET Programming_language = ? WHERE Username = ?", (ProgramLang,TrueUsername))
-         conn.commit()
-         cursor.close()
+         if (TrueUsername != ""):
+            conn = connection()
+            cursor = conn.cursor()
+            ProgramLang = request.form["ChangeLan"].strip()
+            cursor.execute("UPDATE UserTable SET Programming_language = ? WHERE Username = ?", (ProgramLang,TrueUsername))
+            conn.commit()
+            cursor.close()
+            return render_template('/partials/ask_and_answer.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang,Variable=request.form["ChangePage"].strip())
 
       elif request.form["typing"].strip() == "LoggingOut":
          TrueUsername = ""
+         ProgramLang = ""
 
       elif request.form["typing"].strip() == "LoginChange":
          Old_Pas = request.form["oldpassword"].strip()
@@ -83,18 +86,18 @@ def ask_and_answer():
                      cursor.execute("UPDATE UserTable SET Passcode = ? WHERE Username = ?", (New_Pas,TrueUsername))
                      conn.commit()
                      cursor.close()
-                     return render_template('/partials/ask_and_answer.html', Success="", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                     return render_template('/partials/ask_and_answer.html', Success="", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
                   else:
-                     return render_template('/partials/ask_and_answer.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                     return render_template('/partials/ask_and_answer.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
                else:
-                  return render_template('/partials/ask_and_answer.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                  return render_template('/partials/ask_and_answer.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
             else:
-               return render_template('/partials/ask_and_answer.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+               return render_template('/partials/ask_and_answer.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
          else:
-            return render_template('/partials/ask_and_answer.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+            return render_template('/partials/ask_and_answer.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
          
    if TrueUsername != "":
-      return render_template('/partials/ask_and_answer.html', UserNamed=TrueUsername,ProgramLang=ProgramLang)
+      return render_template('/partials/ask_and_answer.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang)
    return render_template('/partials/ask_and_answer.html')
 
 @app.route('/homepage.html', methods=['GET','POST'])
@@ -104,6 +107,7 @@ def homepage():
    if request.method == "POST":
       if request.form["typing"].strip() == "LoggingOut":
          TrueUsername = ""
+         ProgramLang = ""
 
       elif request.form["typing"].strip() == "LoginChange":
          Old_Pas = request.form["oldpassword"].strip()
@@ -119,18 +123,18 @@ def homepage():
                      cursor.execute("UPDATE UserTable SET Passcode = ? WHERE Username = ?", (New_Pas,TrueUsername))
                      conn.commit()
                      cursor.close()
-                     return render_template('/partials/homepage.html', Success="", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                     return render_template('/partials/homepage.html', Success="", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
                   else:
-                     return render_template('/partials/homepage.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                     return render_template('/partials/homepage.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
                else:
-                  return render_template('/partials/homepage.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                  return render_template('/partials/homepage.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
             else:
-               return render_template('/partials/homepage.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+               return render_template('/partials/homepage.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
          else:
-            return render_template('/partials/homepage.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+            return render_template('/partials/homepage.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
          
    if TrueUsername != "":
-      return render_template('/partials/homepage.html', UserNamed=TrueUsername,ProgramLang=ProgramLang)
+      return render_template('/partials/homepage.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang)
    return render_template('/partials/homepage.html')
 
 @app.route('/messages.html', methods=['GET','POST'])
@@ -199,6 +203,7 @@ def messages():
 
       if request.form["typing"].strip() == "LoggingOut":
          TrueUsername = ""
+         ProgramLang = ""
 
       elif request.form["typing"].strip() == "LoginChange":
          Old_Pas = request.form["oldpassword"].strip()
@@ -214,18 +219,18 @@ def messages():
                      cursor.execute("UPDATE UserTable SET Passcode = ? WHERE Username = ?", (New_Pas,TrueUsername))
                      conn.commit()
                      cursor.close()
-                     return render_template('/partials/messages.html', Success="", UserNamed=TrueUsername)
+                     return render_template('/partials/messages.html', Success="", UserNamed=TrueUsername, ProgramLangu=ProgramLang)
                   else:
-                     return render_template('/partials/messages.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLang=ProgramLang)
+                     return render_template('/partials/messages.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
                else:
-                  return render_template('/partials/messages.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLang=ProgramLang)
+                  return render_template('/partials/messages.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
             else:
-               return render_template('/partials/messages.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLang=ProgramLang)
+               return render_template('/partials/messages.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
          else:
-            return render_template('/partials/messages.html', Success="The password inputted was not correct.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLang=ProgramLang)
+            return render_template('/partials/messages.html', Success="The password inputted was not correct.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
          
    if TrueUsername != "":
-      return render_template('/partials/messages.html', UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLang=ProgramLang)
+      return render_template('/partials/messages.html', UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
    return render_template('/partials/messages.html')
 
 @app.route('/login.html', methods=['GET','POST'])
@@ -235,6 +240,7 @@ def login():
    if request.method == "POST":
       if request.form["typing"].strip() == "LoggingOut":
          TrueUsername = ""
+         ProgramLang = ""
 
       elif request.form["typing"].strip() == "LoginChange":
          Old_Pas = request.form["oldpassword"].strip()
@@ -250,18 +256,18 @@ def login():
                      cursor.execute("UPDATE UserTable SET Passcode = ? WHERE Username = ?", (New_Pas,TrueUsername))
                      conn.commit()
                      cursor.close()
-                     return render_template('/partials/login.html', Success="", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                     return render_template('/partials/login.html', Success="", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
                   else:
-                     return render_template('/partials/login.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                     return render_template('/partials/login.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
                else:
-                  return render_template('/partials/login.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+                  return render_template('/partials/login.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
             else:
-               return render_template('/partials/login.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+               return render_template('/partials/login.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
          else:
-            return render_template('/partials/login.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLang=ProgramLang)
+            return render_template('/partials/login.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
          
    if TrueUsername != "":
-      return render_template('/partials/login.html', UserNamed=TrueUsername,ProgramLang=ProgramLang)
+      return render_template('/partials/login.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang)
    
    if request.method == "POST":
       username = request.form["username"].strip()
@@ -279,6 +285,7 @@ def login():
             if len(row) > 0:
                if row[0]["Passcode"] == passcode:
                   TrueUsername = username
+                  ProgramLang = row[0]["Programming_language"]
                   conn.commit()
                   conn.close()
                   return render_template('/partials/login.html', VarSend="Change")
@@ -328,9 +335,38 @@ def login():
 @app.route('/', methods=['POST', 'GET'])
 def signin():
    global TrueUsername,ProgramLang
+   if request.method == "POST":
+      if request.form["typing"].strip() == "LoggingOut":
+         TrueUsername = ""
+         ProgramLang = ""
+
+      elif request.form["typing"].strip() == "LoginChange":
+         Old_Pas = request.form["oldpassword"].strip()
+         New_Pas = request.form["newpassword"].strip()
+         conn = connection()
+         cursor = conn.cursor()
+         users = cursor.execute("SELECT * FROM UserTable WHERE Username = ?", (TrueUsername,))
+         row = users.fetchall()
+         if row[0]["Passcode"] == Old_Pas:
+            if any(character.isupper for character in New_Pas):
+               if any(character.isdigit for character in New_Pas):
+                  if any(character in "!@#$%^&*()" for character in New_Pas):
+                     cursor.execute("UPDATE UserTable SET Passcode = ? WHERE Username = ?", (New_Pas,TrueUsername))
+                     conn.commit()
+                     cursor.close()
+                     return render_template('/partials/signin.html', Success="", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+                  else:
+                     return render_template('/partials/signin.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+               else:
+                  return render_template('/partials/signin.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+            else:
+               return render_template('/partials/signin.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+         else:
+            return render_template('/partials/signin.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+   
    if TrueUsername != "":
-      return render_template('/partials/signin.html', UserNamed=TrueUsername,ProgramLang=ProgramLang)
-   return render_template('/partials/signin.html')
+      return render_template('/partials/index.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+   return render_template('/signin.html')
 
 
 if __name__ == '__main__':
