@@ -49,7 +49,7 @@
                     <p class="AnswerComments">There are no answers to this question.</p>
                     {% endif %}
                     {% for answer in myanswers[mymessages.index(message)] %}
-                    <p class="AnswerComments"><span class=AnswerUser>[{{users_data[answer[2]][1]}}]</span>{{answer[3]}}</p>
+                    <p class="AnswerComments"><span class=AnswerUser>[{{users_data[answer[2] - 1][1]}}]</span>{{answer[3]}}</p>
                     {% endfor %}
                 </div>
             </div>
@@ -59,7 +59,7 @@
         <div id="MessageSend">
             <form action="{{'messages.html'}}" method='POST' id="SendMessage">
                 <input type="hidden" name="typing" value="SendingMessage">
-                <input type="text" id="inputmessage" name="inputmessage" required minlength="3" maxlength="255" size="10" placeholder="Type your message here!">
+                <input type="text" id="inputmessage" name="inputmessage" required minlength="3" maxlength="127" size="10" placeholder="Type your message here!">
             </form>
         </div>
         

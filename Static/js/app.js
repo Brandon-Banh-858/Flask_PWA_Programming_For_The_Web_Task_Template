@@ -24,18 +24,18 @@ window.onload = function() {
         HtmlButton.addEventListener("click", createOverlay);
         CssButton.addEventListener("click", createOverlay);
 
+        this.document.getElementById("PythonQs").addEventListener("click", detect);
+        this.document.getElementById("PythonAs").addEventListener("click", detect2);
+
+        if (document.getElementById("Vari").textContent == "Change1") {
+                detectleave()
+        }
+        else if (document.getElementById("Vari").textContent == "Change2") {
+            detectleave2()
+        }
+
         UserName = document.getElementById("TrueUsernamed");
         if (UserName.textContent != "") {
-
-            this.document.getElementById("PythonQs").addEventListener("click", detect);
-            this.document.getElementById("PythonAs").addEventListener("click", detect2);
-            
-            if (document.getElementById("Vari").textContent == "Change1") {
-                detectleave()
-            }
-            else if (document.getElementById("Vari").textContent == "Change2") {
-                detectleave2()
-            }
 
             this.document.getElementById("menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
             this.document.getElementById("bottom_menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
@@ -154,8 +154,20 @@ window.onload = function() {
         this.document.getElementById("GoBackLeave").addEventListener("click", Leave3);
         this.document.getElementById("SubmitOrLeave").addEventListener("click", Leave);
 
+        if (this.document.getElementById("VarFilter").textContent != "") {
+            this.document.getElementById("SearchMes").value = this.document.getElementById("VarFilter").textContent;
+        }
+
         UserName = document.getElementById("TrueUsernamed");
         if (UserName.textContent != "") {
+            if (document.getElementById("TrueLang").textContent == "") {
+                this.document.getElementById("LoginShadow").style.visibility = "visible";
+                this.document.getElementById("ErrorOverlay").style.visibility = "visible";
+                this.document.getElementById("ErrorOops2").textContent = "You need to choose a programming language in Ask & Answer to be in this page.";
+                this.document.getElementById("ErrorOops2").style.fontSize = "25px";
+                this.document.getElementById("LeaveButton").setAttribute('href', 'ask_and_answer.html')
+            }
+
             this.document.getElementById("menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
             this.document.getElementById("bottom_menu_text4").children.item(0).textContent = UserName.textContent + "'s Profile";
             this.document.getElementById("menu_text4").children.item(0).setAttribute('href', '')

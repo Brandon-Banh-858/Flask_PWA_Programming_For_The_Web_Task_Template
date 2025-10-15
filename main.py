@@ -10,6 +10,7 @@ app.secret_key = "ThisMessageIsReallySecretAndThereIsAbsolutelyNoWayYouWillGuess
 
 TrueUsername = ""
 ProgramLang = ""
+Filter = ""
 
 def connection():
    conn = sqlite3.connect(DB_PATH)
@@ -39,18 +40,18 @@ def index():
                      cursor.execute("UPDATE UserTable SET Passcode = ? WHERE Username = ?", (New_Pas,TrueUsername))
                      conn.commit()
                      cursor.close()
-                     return render_template('/partials/index.html', Success="", UserNamed=TrueUsername)
+                     return render_template('/index.html', Success="", UserNamed=TrueUsername)
                   else:
-                     return render_template('/partials/index.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername)
+                     return render_template('/index.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername)
                else:
-                  return render_template('/partials/index.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername)
+                  return render_template('/index.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername)
             else:
-               return render_template('/partials/index.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername)
+               return render_template('/index.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername)
          else:
-            return render_template('/partials/index.html', Success="The password inputted was not correct.", UserNamed=TrueUsername)
+            return render_template('/index.html', Success="The password inputted was not correct.", UserNamed=TrueUsername)
    
    if TrueUsername != "":
-      return render_template('/partials/index.html', UserNamed=TrueUsername)
+      return render_template('/index.html', UserNamed=TrueUsername)
    return render_template('/index.html')
 
 @app.route('/ask_and_answer.html', methods=['GET','POST'])
@@ -67,6 +68,9 @@ def ask_and_answer():
             conn.commit()
             cursor.close()
             return render_template('/partials/ask_and_answer.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang,Variable=request.form["ChangePage"].strip())
+         else:
+            ProgramLang = request.form["ChangeLan"].strip()
+            return render_template('/partials/ask_and_answer.html', ProgramLangu=ProgramLang,Variable=request.form["ChangePage"].strip())
 
       elif request.form["typing"].strip() == "LoggingOut":
          TrueUsername = ""
@@ -98,7 +102,7 @@ def ask_and_answer():
          
    if TrueUsername != "":
       return render_template('/partials/ask_and_answer.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang)
-   return render_template('/partials/ask_and_answer.html')
+   return render_template('/partials/ask_and_answer.html', ProgramLangu=ProgramLang)
 
 @app.route('/homepage.html', methods=['GET','POST'])
 @app.route('/', methods=['POST', 'GET'])
@@ -135,7 +139,7 @@ def homepage():
          
    if TrueUsername != "":
       return render_template('/partials/homepage.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang)
-   return render_template('/partials/homepage.html')
+   return render_template('/partials/homepage.html', ProgramLangu=ProgramLang)
 
 @app.route('/messages.html', methods=['GET','POST'])
 @app.route('/', methods=['POST', 'GET'])
@@ -147,6 +151,7 @@ def messages():
          execution = request.form["whatToDelete"].strip()
          conn = connection()
          cursor = conn.cursor()
+         cursor.execute("DELETE FROM Answers WHERE Message_ID = ?", (execution,))
          cursor.execute("DELETE FROM Messages WHERE Message_ID = ?", (execution,))
          conn.commit()
          cursor.close()
@@ -165,7 +170,7 @@ def messages():
                   MyUserId = usersdatas[0]
                   break
             for messagesdatas in messageData:
-               if messagesdatas[1] == MyUserId:
+               if (messagesdatas[1] == MyUserId) and (messagesdatas[4] == ProgramLang):
                   MyMessages.append(messagesdatas)
 
          if MyUserId != "":
@@ -175,7 +180,7 @@ def messages():
                else:
                   break
             else:
-               cursor.execute("INSERT INTO Messages (User_ID, Message_Text) VALUES (?,?)", (MyUserId,adding))
+               cursor.execute("INSERT INTO Messages (User_ID, Message_Text, Programming_language) VALUES (?,?,?)", (MyUserId,adding,ProgramLang))
          conn.commit()
          cursor.close()
 
@@ -191,11 +196,11 @@ def messages():
       MyMessages = []
       MyAnswers = []
       for messagesdatas in messageData:
-         if messagesdatas[1] == MyUserId:
+         if (messagesdatas[1] == MyUserId) and (messagesdatas[4] == ProgramLang):
             MyMessages.append(messagesdatas)
             MyMessageAnswers = []
             for answersdatas in answerData:
-               if answersdatas[1] == messagesdatas[0]:
+               if (answersdatas[1] == messagesdatas[0]):
                   MyMessageAnswers.append(answersdatas)
             MyAnswers.append(MyMessageAnswers)
 
@@ -221,17 +226,17 @@ def messages():
                      cursor.close()
                      return render_template('/partials/messages.html', Success="", UserNamed=TrueUsername, ProgramLangu=ProgramLang)
                   else:
-                     return render_template('/partials/messages.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
+                     return render_template('/partials/messages.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
                else:
-                  return render_template('/partials/messages.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
+                  return render_template('/partials/messages.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
             else:
-               return render_template('/partials/messages.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
+               return render_template('/partials/messages.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
          else:
-            return render_template('/partials/messages.html', Success="The password inputted was not correct.", UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
+            return render_template('/partials/messages.html', Success="The password inputted was not correct.", UserNamed=TrueUsername, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
          
    if TrueUsername != "":
-      return render_template('/partials/messages.html', UserNamed=TrueUsername, mymessages=list(reversed(MyMessages)), myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
-   return render_template('/partials/messages.html')
+      return render_template('/partials/messages.html', UserNamed=TrueUsername, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,ProgramLangu=ProgramLang)
+   return render_template('/partials/messages.html', ProgramLangu=ProgramLang)
 
 @app.route('/login.html', methods=['GET','POST'])
 @app.route('/', methods=['POST', 'GET'])
@@ -334,7 +339,88 @@ def login():
 @app.route('/signin.html', methods=['GET','POST'])
 @app.route('/', methods=['POST', 'GET'])
 def signin():
-   global TrueUsername,ProgramLang
+   global TrueUsername,ProgramLang,Filter
+
+   if request.method == "POST":
+
+      if request.form["typing"].strip() == "DeleteFilter":
+         Filter = ""
+
+      if request.form["typing"].strip() == "SendingAnswer":
+         userData = dbHandler.userTable()
+         if TrueUsername != "":
+            for usersdatas in userData:
+               if usersdatas[1] == TrueUsername:
+                  MyUserId = usersdatas[0]
+                  break
+         text = request.form["inputanswer"].strip()
+         idmes = request.form["messageid"].strip()
+
+         if TrueUsername != "":
+            conn = connection()
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO Answers (Message_ID, User_ID, Answer_Text) VALUES (?,?,?)", (idmes,MyUserId,text))
+            conn.commit()
+            cursor.close()
+
+      if request.form["typing"].strip() == "SearchingMessage":
+         Filter = request.form["SearchMes"].strip()
+
+         userData = dbHandler.userTable()
+         messageData = dbHandler.messageTable()
+         answerData = dbHandler.answerTable()
+
+         if TrueUsername != "":
+            for usersdatas in userData:
+               if usersdatas[1] == TrueUsername:
+                  MyUserId = usersdatas[0]
+                  break
+            MyMessages = []
+            MyAnswers = []
+            for messagesdatas in messageData:
+               if (messagesdatas[4] == ProgramLang) and (Filter.lower() in messagesdatas[2].lower()):
+                  MyMessages.append(messagesdatas)
+                  MyMessageAnswers = []
+                  for answersdatas in answerData:
+                     if (answersdatas[1] == messagesdatas[0]):
+                        MyMessageAnswers.append(answersdatas)
+                  MyAnswers.append(MyMessageAnswers)
+            return render_template('/partials/signin.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,VarFilter=Filter)
+         else:
+            MyMessages = []
+            MyAnswers = []
+            for messagesdatas in messageData:
+               if (messagesdatas[4] == ProgramLang) and (Filter.lower() in messagesdatas[2].lower()):
+                  MyMessages.append(messagesdatas)
+                  MyMessageAnswers = []
+                  for answersdatas in answerData:
+                     if (answersdatas[1] == messagesdatas[0]):
+                        MyMessageAnswers.append(answersdatas)
+                  MyAnswers.append(MyMessageAnswers)
+            return render_template('/partials/signin.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, users_data=userData, myanswers=MyAnswers,VarFilter=Filter)
+
+
+   userData = dbHandler.userTable()
+   messageData = dbHandler.messageTable()
+   answerData = dbHandler.answerTable()
+   
+   if TrueUsername != "":
+      for usersdatas in userData:
+         if usersdatas[1] == TrueUsername:
+            MyUserId = usersdatas[0]
+            break
+   MyMessages = []
+   MyAnswers = []
+   for messagesdatas in messageData:
+      if (messagesdatas[4] == ProgramLang) and (Filter in messagesdatas[2]):
+         MyMessages.append(messagesdatas)
+         MyMessageAnswers = []
+         for answersdatas in answerData:
+            if (answersdatas[1] == messagesdatas[0]):
+               MyMessageAnswers.append(answersdatas)
+         MyAnswers.append(MyMessageAnswers)
+
+
    if request.method == "POST":
       if request.form["typing"].strip() == "LoggingOut":
          TrueUsername = ""
@@ -354,19 +440,19 @@ def signin():
                      cursor.execute("UPDATE UserTable SET Passcode = ? WHERE Username = ?", (New_Pas,TrueUsername))
                      conn.commit()
                      cursor.close()
-                     return render_template('/partials/signin.html', Success="", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+                     return render_template('/partials/signin.html', Success="", UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,VarFilter=Filter)
                   else:
-                     return render_template('/partials/signin.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+                     return render_template('/partials/signin.html', Success="The new password did not contain special characters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,VarFilter=Filter)
                else:
-                  return render_template('/partials/signin.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+                  return render_template('/partials/signin.html', Success="The new password did not contain any numbers.", UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,VarFilter=Filter)
             else:
-               return render_template('/partials/signin.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+               return render_template('/partials/signin.html', Success="The new password did not contain any capital letters.", UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,VarFilter=Filter)
          else:
-            return render_template('/partials/signin.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLangu=ProgramLang)
+            return render_template('/partials/signin.html', Success="The password inputted was not correct.", UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,VarFilter=Filter)
    
    if TrueUsername != "":
-      return render_template('/partials/index.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang)
-   return render_template('/signin.html')
+      return render_template('/partials/signin.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang, mymessages=MyMessages, myanswers=MyAnswers, users_data=userData,VarFilter=Filter)
+   return render_template('/partials/signin.html', UserNamed=TrueUsername,ProgramLangu=ProgramLang,VarFilter=Filter,mymessages=MyMessages, myanswers=MyAnswers, users_data=userData)
 
 
 if __name__ == '__main__':

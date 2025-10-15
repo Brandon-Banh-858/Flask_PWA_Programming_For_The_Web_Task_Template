@@ -25,6 +25,13 @@
     </div>
 
     <div>
+
+        <div id="ErrorOverlay">
+            <h2 id="ErrorOops">Sorry, You Can't Be Here!</h2>
+            <h2 id="ErrorOops2"></h2>
+            <a id="LeaveButton" href="homepage.html">Leave</a>
+        </div>
+
         <p class="invisible" id="answers"></p>
         <div class="GoBack"></div>
         <button id="GoBackLeave"><img id="GoBackImg" src="static\images\GreenArrow.png" alt="Go Back"></button>
@@ -32,17 +39,53 @@
         <div class="SubmitOr"></div>
         <button id="SubmitOrLeave"><img id="SubmitOrImg" src="static\images\GreenArrow.png" alt="Submit Or See Answers"></button>
         <h1 id="SubmitOrText2">Ask and Answer</h1>
+        
+        <div class="ScrollBar">
+            {% for message in mymessages %}
+            <div class="CustomText">
+                <p class="CustomMessage">{{message[2]}}</p>
+                <p class="AnswerText">Answer</p>
+                <div class="CustomAnswer">
+                    {% if (myanswers[mymessages.index(message)]) == [] %}
+                    <p class="AnswerComments">There are no answers to this question.</p>
+                    {% endif %}
+                    {% for answer in myanswers[mymessages.index(message)] %}
+                    <!-- <button class="Deletion2" id=""><img class="DeletionImg2" src="static\images\ExitTransparent.png" alt="Exit" id=""></button> -->
+                    <p class="AnswerComments"><span class=AnswerUser>[{{users_data[answer[2] - 1][1]}}]</span>{{answer[3]}}</p>
+                    {% endfor %}
+                    {% if UserNamed != "" %}
+                    <div id="MessageSend3">
+                        <form action="{{'signin.html'}}" method='POST' id="SendingAnswer">
+                            <input type="hidden" name="typing" value="SendingAnswer">
+                            <input type="text" id="inputanswer" name="inputanswer" required minlength="3" maxlength="511" size="10" placeholder="Respond">
+                            <input type="hidden" id="messageid" name="messageid" value="{{message[0]}}">
+                        </form>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
 
         <div id="MessageSend2">
             <form action="{{'signin.html'}}" method='POST' id="SendMessage">
-                <input type="hidden" name="typing" value="SendingMessage">
-                <input type="text" id="inputmessage" name="inputmessage" required minlength="3" maxlength="255" size="10" placeholder="What would you like to search up?">
+                <input type="hidden" name="typing" value="SearchingMessage">
+                <input type="text" id="SearchMes" name="SearchMes" required minlength="0" maxlength="127" size="10" placeholder="What would you like to search up?">
+                <p class="invisible" id="VarFilter">{{VarFilter}}</p>
             </form>
+            {% if VarFilter != "" %}
+            <form action="{{'signin.html'}}" method='POST' id="DeletingFilter">
+                <input type="hidden" name="typing" value="DeleteFilter">
+                <button class="Deletion3" id=""><img class="DeletionImg3" src="static\images\ExitTransparent.png" alt="Exit" id=""></button>
+            </form>
+            {% endif %}
         </div>
+
     </div>
 
     <div id="menu">
-        <nav id="bottomnav">
+        <nav id="bottomnav1">
             <h1 id="bottomtitled">Sign In</h1>
             <ul class="topnav">
                 <li id="bottom_menu_text1"><a href="ask_and_answer.html">Ask & Answer</a></li>
