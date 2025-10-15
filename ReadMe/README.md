@@ -146,5 +146,7 @@ Messaging system fully functional
 - Fixed a lot of bugs
 
 ![answers preview](ComputingT410.jpg)
-The answers page was the final of the core mechanics I had to add before submission.
-This involved giving 
+The answers page was the final of the core mechanics I had to add before submission, but it didn't take as long as I expected. Though there were a few issues with the database being 1 value offset from what was required, and the rearrangement of lists also messed things up, I eventually were able to fix all of the bugs.
+I also quickly added offline functionality, though this was mainly just through copying the code, simular to setting up the python environment.
+
+For the website, please use Google Chrome to have it function, as a lot of elements are based on screen size and break if the screen size breaks.
