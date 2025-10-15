@@ -129,6 +129,7 @@ Added Creating messages, logging out and changing password
 ![message preview](ComputingT47.jpg)
 I didn't make a lot of progress during the holidays as I had limited access to the the files, but I still managed to include vital parts of the web application.
 The creation of messages (Though not replies) took a while due to the interesting mechanics of having SQL and Javascript communicate (Javascript had to using html to send a form to Python to get data from SQL then send a variable to html for javascript to read), but eventually the messages were visualised on the webpage, and they could be deleted or ignored (With identical messaages).
+I also ran through the test cases simultaneously whilst testing if the messaging functionality worked, and it ended successfully.
 
 ![logout overlay](ComputingT48.jpg)
 This logout overlay also took a while to add, as it forced me to deal with forms and SQL a lot more (Which later helped me make the messages webpage), but it works well without any bugs (that I could find), and I'm fairly satisfied with the result.
