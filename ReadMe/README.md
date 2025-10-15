@@ -147,3 +147,4 @@ Messaging system fully functional
 
 ![answers preview](ComputingT410.jpg)
 The answers page was the final of the core mechanics I had to add before submission.
+This involved giving 
