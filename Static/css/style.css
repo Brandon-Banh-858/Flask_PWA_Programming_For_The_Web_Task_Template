@@ -298,11 +298,10 @@ nav h1 {
   display: block;
   position: absolute;
   text-align: center;
-  top: 0px;
   left: 0px;
-  top: 520px;
-  left: 65.25%;
-  height: 290px;
+  top: 560px;
+  left: 62.25%;
+  height: 185px;
 }
 
 #homepage_text2 {
