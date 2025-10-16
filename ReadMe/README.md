@@ -150,4 +150,26 @@ Messaging system fully functional
 The answers page was the final of the core mechanics I had to add before submission, but it didn't take as long as I expected. Though there were a few issues with the database being 1 value offset from what was required, and the rearrangement of lists also messed things up, I eventually were able to fix all of the bugs.
 I also quickly added offline functionality, though this was mainly just through copying the code, simular to setting up the python environment.
 
-For the website, please use Google Chrome to have it function, as a lot of elements are based on screen size and break if the screen size breaks.
+
+## Additional Guidance and Acknowledgements
+To open my website:
+- Open the Github and download the Zip file
+- Extract the zip file and open the file on VSC
+- Setup the python environment then open main.py
+- Run main.py and open the website
+- Click one of the menu buttons to actually enter the website
+
+To access main features:
+- One of the first things that should be done is logging in (After making an account), as very limited things are present when not logged in.
+- To enter a 'messages' page, choose a programming language in 'Ask and answer'. The main sample data is present in the Python and Java messaging groups.
+- Make sure to scroll down on the messages and answers page. Click the arrows to navigate on the side for these pages. The messages page is purposely empty initally as no messages were sent on that account, and the answers page may also be empty initally if your programming language is not Java or Python (Check your profile to check your programming language)
+
+Additional Notes:
+For the website, please use Google Chrome to have it function, as a lot of elements are based on screen size and break if the screen size changes.
+If any bugs occur and softlocks you, please close then reopen the website
+The passwords are NOT encrypted as I didn't have time to implement it
+
+Acknowledgements:
+- Mdm (Helped me a lot with revising how to use html and Javascript, as well as supporting me make my offline functionality in manifest.js)
+- Stack Overflow (Helped me learn css and html, and helped me fix really specific bugs)
+- W3schools (Helped me create scrollbar and how to create buttons + link them to Javascript)
